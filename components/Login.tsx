@@ -1,8 +1,12 @@
 "use client"
+import { useUserContext } from "@/contexts/userContext"
 import { users } from "@/data/users"
+import { UserContextType } from "@/types/context"
 import { SetStateAction, useState } from "react"
 
 const Login = () => {
+  //as = alias
+  const {setUser} = useUserContext() as UserContextType
     const [username, setUsername] = useState<string>("")
     const [password, setPassword] = useState<string>("")
 
@@ -17,7 +21,8 @@ const Login = () => {
     const handleLogin=(e: { preventDefault: () => void })=> {
         e.preventDefault()
         const loggedInUser = users.find(item => item.name === username && item.password === password)
-        console.log(loggedInUser)
+        if(loggedInUser)setUser(loggedInUser)
+          //add check
     }
 
   return (

@@ -6,6 +6,7 @@ import Navigation from "@/components/Navigation";
 import Login from "@/components/Login";
 import Footer from "@/components/Footer";
 import { UserProvider } from "@/contexts/userContext";
+import LoginWrapper from "@/components/LoginWrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,9 +32,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col">
         <UserProvider>
         <Header/>
-        <Navigation/>
-        <Login/>
-        {children}
+        <LoginWrapper children={children}></LoginWrapper>
         <Footer/>
         </UserProvider>
       </body>
