@@ -4,3 +4,7 @@ export type CategoryType ={
     strCategoryThumb:string
     strCategoryDescription:string
 }
+
+export type CategoriesResponse={
+    categories: CategoryType[];
+}
