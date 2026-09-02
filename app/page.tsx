@@ -6,7 +6,9 @@ import { useEffect, useState } from "react";
 
 export default function Home() {
   const [recipe, setRecipe] = useState<RecipesType | null>(null)
+  
   const {user} = useUserContext() as UserContextType
+
   const fetchRandomMeal = async()=>{
     try {
       const response = await fetch(`${process.env.NEXT_PUBLIC_API_ENDPOINT}random.php`)
@@ -19,13 +21,31 @@ export default function Home() {
     }
   }
 
-  useEffect(()=>{
-    fetchRandomMeal()
-  },[])
+  const fetchCategoryMeal = async()=>{
+    try {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_ENDPOINT}filter.php?c=${user!.category}`)
+      const data = await response.json()
+      if (data) {
+        setRecipe(data.meals[Math.floor(Math.random() * data.meals.length)])
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
 
   
+// the extra ! means that it definetly exists
+  useEffect(()=>{
+    if(!user!.category){
+      fetchRandomMeal()
+    }
+      fetchCategoryMeal()
+  },[])
+
+
   return (
-    <div>
+    <div className="flex flex-1 flex-col">
       <h3>Welcome Home {user?.name}</h3>
       {recipe && 
       <div key={recipe.idMeal}>

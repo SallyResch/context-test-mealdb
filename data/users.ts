@@ -4,19 +4,19 @@ export const users:UserType[]=[
         {
         name: "Sally",
         password: "password123",
-        category: null,
+        category: "dessert",
         recipes: null
     },
     {
         name: "Anna",
         password: "anna456",
-        category: null,
+        category: "chicken",
         recipes: null
     },
     {
         name: "Erik",
         password: "erik789",
-        category: null,
+        category: "beef",
         recipes: null
     },
     {
