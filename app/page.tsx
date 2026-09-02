@@ -2,11 +2,11 @@
 import { useUserContext } from "@/contexts/userContext";
 import { UserContextType } from "@/types/context";
 import { RecipesType } from "@/types/recipes";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Home() {
   const [recipe, setRecipe] = useState<RecipesType | null>(null)
-
   const { user } = useUserContext() as UserContextType
 
   const fetchRandomMeal = async () => {
@@ -33,8 +33,6 @@ export default function Home() {
     }
   }
 
-
-
   // the extra ! means that it definetly exists
   useEffect(() => {
     if (!user!.category) {
@@ -43,16 +41,15 @@ export default function Home() {
     fetchCategoryMeal()
   }, [])
 
-
   return (
-    <div>
-      <h3>Welcome Home {user?.name}</h3>
-      <p>Your favourie category is: {user?.category}</p>
+    <div className="m-auto">
+      <h3 className="text-4xl text-center">Welcome {user!.name}</h3>
+      <p className="font-semibold text-2xl">Favourie category: <span className="font-bold">{user!.category}</span></p>
       {recipe &&
-        <div key={recipe.idMeal}>
+        <Link href={`/categories/category/${recipe.idMeal}`} key={recipe.idMeal}>
           <h3>{recipe.strMeal}</h3>
           <img src={recipe.strMealThumb} width={320} />
-        </div>}
+        </Link>}
     </div>
   );
 }
