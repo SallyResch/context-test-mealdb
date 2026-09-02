@@ -42,13 +42,13 @@ export default function Home() {
   }, [])
 
   return (
-    <div className="m-auto">
-      <h3 className="text-4xl text-center">Welcome {user!.name}</h3>
+    <div className="m-auto bg-black text-white rounded-2xl p-4">
+      <h3 className="text-4xl text-center font-semibold">Welcome {user!.name}</h3>
       <p className="font-semibold text-2xl">Favourie category: <span className="font-bold">{user!.category}</span></p>
       {recipe &&
         <Link href={`/categories/category/${recipe.idMeal}`} key={recipe.idMeal}>
           <h3>{recipe.strMeal}</h3>
-          <img src={recipe.strMealThumb} width={320} />
+          <img src={recipe.strMealThumb} width={300} />
         </Link>}
     </div>
   );
