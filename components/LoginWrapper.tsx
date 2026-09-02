@@ -12,7 +12,8 @@ const LoginWrapper = ({children}: {children:ReactNode}) => {
     {user ?
     <> 
     <Navigation/>
-    {children}</> : <Login/>}
+    {children}
+    </> : <Login/>}
     </>
   )
 }
