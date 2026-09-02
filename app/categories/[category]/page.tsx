@@ -1,7 +1,14 @@
+type Props = {
+    params: Promise<{ category: string }>
+}
 
-const Category = () => {
+const Category = async ({ params }: Props) => {
+    const { category } = await params
+    console.log(category)
+
+
     return (
-        <div>Category</div>
+        <div>{category}</div>
     )
 }
 

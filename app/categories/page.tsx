@@ -27,7 +27,7 @@ const CategoriesPage = () => {
       <div className="grid grid-cols-2 row-auto">
         {categories.map((category) => (
           <div key={category.idCategory} className="max-w-md m-2 border-fuchsia-950 border-2 rounded-2xl p-4">
-            <Link href={`/categories/${category.strCategory.toLowerCase}`}>
+            <Link href={`/categories/${category.strCategory.toLowerCase()}`}>
               <h5 className="text-2xl font-semibold">{category.strCategory}</h5>
             </Link>
             <img className="text-2xl" src={category.strCategoryThumb} width={200} />
