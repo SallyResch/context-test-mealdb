@@ -22,10 +22,16 @@ export default function Home() {
   useEffect(()=>{
     fetchRandomMeal()
   },[])
+
+  
   return (
     <div>
       <h3>Welcome Home {user?.name}</h3>
-      {recipe && <h3>{recipe.strMeal}</h3>}
+      {recipe && 
+      <div key={recipe.idMeal}>
+        <h3>{recipe.strMeal}</h3>
+        <img src={recipe.strMealThumb} width={320}/>
+      </div>}
     </div>
   );
 }
