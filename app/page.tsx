@@ -6,10 +6,10 @@ import { useEffect, useState } from "react";
 
 export default function Home() {
   const [recipe, setRecipe] = useState<RecipesType | null>(null)
-  
-  const {user} = useUserContext() as UserContextType
 
-  const fetchRandomMeal = async()=>{
+  const { user } = useUserContext() as UserContextType
+
+  const fetchRandomMeal = async () => {
     try {
       const response = await fetch(`${process.env.NEXT_PUBLIC_API_ENDPOINT}random.php`)
       const data = await response.json()
@@ -21,7 +21,7 @@ export default function Home() {
     }
   }
 
-  const fetchCategoryMeal = async()=>{
+  const fetchCategoryMeal = async () => {
     try {
       const response = await fetch(`${process.env.NEXT_PUBLIC_API_ENDPOINT}filter.php?c=${user!.category}`)
       const data = await response.json()
@@ -34,24 +34,25 @@ export default function Home() {
   }
 
 
-  
-// the extra ! means that it definetly exists
-  useEffect(()=>{
-    if(!user!.category){
+
+  // the extra ! means that it definetly exists
+  useEffect(() => {
+    if (!user!.category) {
       fetchRandomMeal()
     }
-      fetchCategoryMeal()
-  },[])
+    fetchCategoryMeal()
+  }, [])
 
 
   return (
-    <div className="flex flex-1 flex-col">
+    <div>
       <h3>Welcome Home {user?.name}</h3>
-      {recipe && 
-      <div key={recipe.idMeal}>
-        <h3>{recipe.strMeal}</h3>
-        <img src={recipe.strMealThumb} width={320}/>
-      </div>}
+      <p>Your favourie category is: {user?.category}</p>
+      {recipe &&
+        <div key={recipe.idMeal}>
+          <h3>{recipe.strMeal}</h3>
+          <img src={recipe.strMealThumb} width={320} />
+        </div>}
     </div>
   );
 }

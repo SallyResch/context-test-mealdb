@@ -29,9 +29,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-col">
         <UserProvider>
-        <Header/>
-        <LoginWrapper children={children}></LoginWrapper>
-        <Footer/>
+          <Header />
+          <div className="flex flex-1 flex-col">
+            <LoginWrapper children={children}></LoginWrapper>
+          </div>
+          <Footer />
         </UserProvider>
       </body>
     </html>
