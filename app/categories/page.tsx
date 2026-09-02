@@ -22,17 +22,19 @@ const CategoriesPage = () => {
     fetchCategories()
   }, [])
   return (
-    <div>
+    <div className="flex flex-1 flex-col m-auto">
       <h2 className="font-semibold text-4xl text-center">Meal Categories</h2>
-      {categories.map((category) => (
-        <div key={category.idCategory} className="max-w-md m-auto">
-          <Link href={`/categories/${category.strCategory.toLocaleLowerCase}`}>
-            <h5 className="text-2xl font-semibold">{category.strCategory}</h5>
-          </Link>
-          <img className="text-2xl" src={category.strCategoryThumb} />
-          <h5 className="text-2xl">{category.strCategoryDescription}</h5>
-        </div>
-      ))}
+      <div className="grid grid-cols-2 row-auto">
+        {categories.map((category) => (
+          <div key={category.idCategory} className="max-w-md m-2 border-fuchsia-950 border-2 rounded-2xl p-4">
+            <Link href={`/categories/${category.strCategory.toLowerCase}`}>
+              <h5 className="text-2xl font-semibold">{category.strCategory}</h5>
+            </Link>
+            <img className="text-2xl" src={category.strCategoryThumb} width={200} />
+            <p className="text-sm">{category.strCategoryDescription}</p>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }

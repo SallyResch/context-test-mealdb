@@ -31,7 +31,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <UserProvider>
           <Header />
           <div className="flex flex-1 flex-col">
-            <LoginWrapper children={children}></LoginWrapper>
+            <LoginWrapper children={children} />
           </div>
           <Footer />
         </UserProvider>
