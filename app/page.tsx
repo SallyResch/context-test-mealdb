@@ -1,4 +1,5 @@
 "use client"
+import RecipeCard from "@/components/RecipeCard";
 import { useUserContext } from "@/contexts/userContext";
 import { UserContextType } from "@/types/context";
 import { RecipesType } from "@/types/recipes";
@@ -47,10 +48,8 @@ export default function Home() {
       <p className="font-semibold text-2xl">Favourie category: <span className="font-bold">{user!.category}</span></p>
       <div className="bg-black text-white p-4 rounded-2xl">
         {recipe &&
-          <Link href={`/categories/${user!.category}/${recipe.idMeal}`} key={recipe.idMeal}>
-            <h3>{recipe.strMeal}</h3>
-            <img src={recipe.strMealThumb} width={300} />
-          </Link>}
+        <RecipeCard {...recipe}/>
+          }
       </div>
     </div>
   );
