@@ -1,3 +1,4 @@
+import RecipeButton from "@/components/RecipeButton";
 import { RecipesDetail } from "@/types/recipeDetails";
 
 
@@ -20,7 +21,10 @@ const Recipe = async({params}:{params:{id:string}}) => {
         <div>
             {recipe && 
             <div className="flex flex-col items-center">
+                <div className="flex flex-row items-center">
                 <h2 className="text-4xl font-semibold">{recipe.strMeal}</h2>
+                <RecipeButton idMeal={recipe.idMeal} strMeal={recipe.strMeal} strMealThumb={recipe.strMealThumb}/>
+                </div>
                 <img src={recipe.strMealThumb} alt={recipe.strMeal}  width={300} className="rounded border border-amber-500"/>
                 <p>Category: {recipe.strCategory}</p>
                 <p>Country: {recipe.strCountry}</p>
@@ -29,7 +33,6 @@ const Recipe = async({params}:{params:{id:string}}) => {
                     <h3>Ingredients</h3>
                     {recipe.ingredients}
                 </div>
-                
             </div>}
         </div>
         

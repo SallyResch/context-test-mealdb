@@ -1,9 +1,12 @@
 import { RecipesType } from "@/types/recipes"
+import { Heart } from "lucide-react"
 
 
 const RecipeButton  = async ({idMeal,strMeal,strMealThumb}: RecipesType) => {
   return (
-    <div>RecipeButton</div>
+    <div>
+      <Heart size={32}/>
+    </div>
   )
 }
 
