@@ -3,7 +3,6 @@ import RecipeCard from "@/components/RecipeCard";
 import { useUserContext } from "@/contexts/userContext";
 import { UserContextType } from "@/types/context";
 import { RecipesType } from "@/types/recipes";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Home() {
