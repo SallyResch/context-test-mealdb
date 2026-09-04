@@ -18,9 +18,10 @@ const Recipe = async({params}:{params:{id:string}}) => {
 
     return (
         <div>
-            {recipe && <div>
-                <h2>{recipe.strMeal}</h2>
-                <img src={recipe.strMealThumb} alt={recipe.strMeal}  width={300}/>
+            {recipe && 
+            <div className="flex flex-col items-center">
+                <h2 className="text-4xl font-semibold">{recipe.strMeal}</h2>
+                <img src={recipe.strMealThumb} alt={recipe.strMeal}  width={300} className="rounded border border-amber-500"/>
                 <p>Category: {recipe.strCategory}</p>
                 <p>Country: {recipe.strCountry}</p>
                 <p>Instructions: {recipe.strInstructions}</p>
