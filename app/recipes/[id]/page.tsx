@@ -31,7 +31,9 @@ const Recipe = async({params}:{params:{id:string}}) => {
                 <p>Instructions: {recipe.strInstructions}</p>
                 <div>
                     <h3>Ingredients</h3>
+                    <div className=" max-w-md">
                     {recipe.ingredients}
+                    </div>
                 </div>
             </div>}
         </div>
