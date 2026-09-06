@@ -1,4 +1,4 @@
-import RecipeButton from "@/components/RecipeButton";
+import LikeButton from "@/components/LikeButton";
 import { RecipesDetail } from "@/types/recipeDetails";
 
 
@@ -21,9 +21,9 @@ const Recipe = async({params}:{params:{id:string}}) => {
         <div>
             {recipe && 
             <div className="flex flex-col items-center">
-                <div className="flex flex-row items-center">
+                <div className="flex flex-row max-w-[300px]">
                 <h2 className="text-4xl font-semibold">{recipe.strMeal}</h2>
-                <RecipeButton idMeal={recipe.idMeal} strMeal={recipe.strMeal} strMealThumb={recipe.strMealThumb}/>
+                <LikeButton idMeal={recipe.idMeal} strMeal={recipe.strMeal} strMealThumb={recipe.strMealThumb}/>
                 </div>
                 <img src={recipe.strMealThumb} alt={recipe.strMeal}  width={300} className="rounded border border-amber-500"/>
                 <p>Category: {recipe.strCategory}</p>
