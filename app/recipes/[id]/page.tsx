@@ -1,5 +1,6 @@
 import LikeButton from "@/components/LikeButton";
 import { RecipesDetail } from "@/types/recipeDetails";
+import { RecipesType } from "@/types/recipes";
 
 
 const Recipe = async({params}:{params:{id:string}}) => {
@@ -10,9 +11,9 @@ const Recipe = async({params}:{params:{id:string}}) => {
             const data = await response.json()
             recipe = data.meals[0]
             const keys = Object.keys(recipe!).filter(key => key.includes("strIngredient"))
-            const keysValue = keys.filter((key:string) => recipe[key] !== "" && recipe[key] !== null)
-            const ingredients = keysValue.map((key, index) => `${recipe[key]} - ${recipe[`strMeasure${index + 1}`]}`)
-            recipe.ingredients = ingredients;
+            const keysValue = keys.filter((key:string) => recipe![key as keyof RecipesDetail] !== "" && recipe![key as keyof RecipesDetail] !== null)
+            const ingredients = keysValue.map((key, index) => `${recipe![key as keyof RecipesDetail]} - ${recipe[`strMeasure${index + 1}`]}`)
+            recipe!.ingredients = ingredients;
         } catch (error) {
             console.log(error)
         }
