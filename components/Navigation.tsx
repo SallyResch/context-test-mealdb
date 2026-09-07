@@ -7,14 +7,16 @@ import { useState } from "react"
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const handleMenu = () => {
+    setIsMenuOpen(!isMenuOpen)
+  }
 
   return (
-    <nav>
+    <nav className="bg-amber-500">
       <div>
         <button onClick={handleMenu}>
           {isMenuOpen ? <XIcon /> : <MenuIcon />}
         </button>
-
       </div>
       {isMenuOpen && (
         <div className="flex flex-row justify-evenly m-auto">
