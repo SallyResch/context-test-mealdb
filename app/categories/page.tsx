@@ -31,7 +31,6 @@ const CategoriesPage = () => {
               <h5 className="text-2xl font-semibold">{category.strCategory}</h5>
             </Link>
             <img className="text-2xl" src={category.strCategoryThumb} width={200} />
-            <p className="text-sm">{category.strCategoryDescription}</p>
           </div>
         ))}
       </div>
