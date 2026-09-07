@@ -12,27 +12,39 @@ const Navigation = () => {
   }
 
   const handleNavClick = () => {
-    setIsMenuOpen(!isMenuOpen)
+    setIsMenuOpen(false)
   }
 
   return (
-    <nav className="bg-amber-500">
-      <div>
-        <button onClick={handleMenu}>
-          {isMenuOpen ? <XIcon /> : <MenuIcon />}
-        </button>
-      </div>
-      {isMenuOpen && (
-        <div className="flex flex-row justify-evenly m-auto">
-          <Link onClick={handleNavClick} className="text-fuchsia-950 hover:bg-fuchsia-950 hover:text-amber-500 rounded p-2" href={"/"}>Home</Link>
-          <Link onClick={handleNavClick} className="text-fuchsia-950 hover:bg-fuchsia-950 hover:text-amber-500 rounded p-2" href={"/about"}>About</Link>
-          <Link onClick={handleNavClick} className="text-fuchsia-950 hover:bg-fuchsia-950 hover:text-amber-500 rounded p-2" href={"/categories"}>Categories</Link>
-          <Link onClick={handleNavClick} className="text-fuchsia-950 hover:bg-fuchsia-950 hover:text-amber-500 rounded p-2" href={"/profile"}>Profile</Link>
-          <Logout />
+    <nav>
+      <div className="md:hidden bg-amber-500 text-fuchsia-950">
+
+        <div className="flex justify-end p-2">
+          <button onClick={handleMenu}>
+            <MenuIcon size={40} />
+          </button>
         </div>
-      )}
+
+        {isMenuOpen && (
+          <div className="fixed top-28 bottom-0 left-[50%] right-0 z-50 bg-amber-500 shadow-2xl">
+            <div className="flex justify-end p-2">
+              <button onClick={handleMenu}>
+                <XIcon />
+              </button>
+            </div>
+            <div className="flex flex-col h-[calc(100vh-48px)] font-semibold text-lg">
+              <Link onClick={handleNavClick} className="text-fuchsia-950 hover:bg-fuchsia-950 hover:text-amber-500 rounded p-2" href={"/"}>Home</Link>
+              <Link onClick={handleNavClick} className="text-fuchsia-950 hover:bg-fuchsia-950 hover:text-amber-500 rounded p-2" href={"/about"}>About</Link>
+              <Link onClick={handleNavClick} className="text-fuchsia-950 hover:bg-fuchsia-950 hover:text-amber-500 rounded p-2" href={"/categories"}>Categories</Link>
+              <Link onClick={handleNavClick} className="text-fuchsia-950 hover:bg-fuchsia-950 hover:text-amber-500 rounded p-2" href={"/profile"}>Profile</Link>
+              <Logout />
+            </div>
+          </div>
+        )}
+      </div>
+
       <div className="bg-amber-500 font-semibold p-2 hidden md:block">
-        <div className="flex flex-row justify-evenly m-auto">
+        <div className="flex flex-row justify-center m-auto">
           <Link className="text-fuchsia-950 hover:bg-fuchsia-950 hover:text-amber-500 rounded p-2" href={"/"}>Home</Link>
           <Link className="text-fuchsia-950 hover:bg-fuchsia-950 hover:text-amber-500 rounded p-2" href={"/about"}>About</Link>
           <Link className="text-fuchsia-950 hover:bg-fuchsia-950 hover:text-amber-500 rounded p-2" href={"/categories"}>Categories</Link>
