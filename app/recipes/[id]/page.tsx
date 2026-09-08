@@ -1,7 +1,5 @@
 import LikeButton from "@/components/LikeButton";
 import { RecipesDetail } from "@/types/recipeDetails";
-import { RecipesType } from "@/types/recipes";
-
 
 const Recipe = async ({ params }: { params: { id: string } }) => {
     const { id } = await params
@@ -29,8 +27,8 @@ const Recipe = async ({ params }: { params: { id: string } }) => {
     return (
         <div>
             {recipe &&
-                <div className="flex flex-col items-center">
-                    <div className="flex flex-row max-w-[300px]">
+                <div className="flex flex-col items-center max-w-md m-auto">
+                    <div className="flex flex-row">
                         <h2 className="text-4xl font-semibold">{recipe.strMeal}</h2>
                         <LikeButton idMeal={recipe.idMeal} strMeal={recipe.strMeal} strMealThumb={recipe.strMealThumb} />
                     </div>
