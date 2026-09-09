@@ -5,7 +5,7 @@ const AboutPage = () => {
     <div className="max-w-md m-auto">
       <div>
         <h2 className="text-3xl">About Sally´s</h2>
-        <h3 >Coziest Corner in Town</h3>
+        <h3>Coziest Corner in Town</h3>
         <p>Welcome to <span >Sally’s – Coziest Corner in Town</span>,
           a little restaurant with a big heart.
           We believe that good food tastes even better when it’s enjoyed in a warm,

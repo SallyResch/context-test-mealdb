@@ -23,8 +23,6 @@ const Login = () => {
     const loggedInUser = users.find(item => item.name === username && item.password === password)
     if (loggedInUser) setUser(loggedInUser)
     //add check
-    console.log(loggedInUser)
-    console.log(setUser.length)
   }
 
   return (

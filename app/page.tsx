@@ -44,12 +44,12 @@ export default function Home() {
   return (
     <div className="m-auto p-4">
       <h3 className="text-4xl text-center font-semibold">Welcome {user!.name}</h3>
-      <p className="font-semibold text-2xl">Favourie category: <span className="font-bold">{user!.category}</span></p>
-       <p>Favourie recipes: {user!.recipes.length}</p>
+      <p className="font-semibold text-2xl">Favourie category: <span className="font-bold">{user!.category!.toUpperCase()}</span></p>
+      <p>Favourie recipes: {user!.recipes.length}</p>
       <div className="bg-black text-white p-4 rounded-2xl">
         {recipe &&
-        <RecipeCard {...recipe}/>
-          }
+          <RecipeCard {...recipe} />
+        }
       </div>
     </div>
   );
