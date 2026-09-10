@@ -5,15 +5,16 @@ import { ReactNode } from "react"
 import Login from "./Login"
 import Navigation from "./Navigation"
 
-const LoginWrapper = ({children}: {children:ReactNode}) => {
-    const {user} = useUserContext() as UserContextType
+const LoginWrapper = ({ children }: { children: ReactNode }) => {
+  const { user } = useUserContext() as UserContextType
   return (
     <>
-    {user ?
-    <> 
-    <Navigation/>
-    {children}
-    </> : <Login/>}
+      {user ?
+        <>
+          <Navigation />
+          {children}
+
+        </> : <div className="flex flex-1 items-center justify-center bg-[url('/cozycorner.webp')] bg-cover bg-center"> <Login /></div>}
     </>
   )
 }

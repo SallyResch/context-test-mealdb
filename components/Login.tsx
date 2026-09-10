@@ -28,7 +28,7 @@ const Login = () => {
   return (
     <form className="flex flex-col items-center bg-fuchsia-950 border-amber-500 m-auto p-4 rounded">
       <div className="flex flex-col text-white m-1">
-        <label htmlFor="username">Username</label>
+        <label className={``} htmlFor="username">Username</label>
         <input
           type="text"
           id="username"
