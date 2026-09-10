@@ -31,10 +31,10 @@ const CategoriesPage = () => {
         {categories.map((category) => (
           <div key={category.idCategory} className="max-w-md m-2 border-fuchsia-950 border-2 rounded-2xl p-4">
             <div className="flex justify-between">
-            <Link href={`/categories/${category.strCategory.toLowerCase()}`}>
-              <h5 className="text-2xl font-semibold">{category.strCategory}</h5>
-            </Link>
-            <LikeCategoryButton strCategory={category.strCategory}/>
+              <Link href={`/categories/${category.strCategory}`}>
+                <h5 className="text-2xl font-semibold">{category.strCategory}</h5>
+              </Link>
+              <LikeCategoryButton strCategory={category.strCategory} />
             </div>
             <img className="text-2xl" src={category.strCategoryThumb} width={200} />
           </div>

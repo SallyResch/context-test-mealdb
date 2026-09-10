@@ -5,8 +5,7 @@ import { Heart } from 'lucide-react'
 
 const LikeCategoryButton = ({ strCategory }: { strCategory: string }) => {
   const { user, setUser } = useUserContext() as UserContextType
-  const isLiked = user?.category === strCategory
-
+  const isLiked = user?.category?.toLowerCase() === strCategory.toLowerCase()
   const handleClick = () => {
     if (!user) return
     if (user && user.category === strCategory) {
@@ -14,7 +13,6 @@ const LikeCategoryButton = ({ strCategory }: { strCategory: string }) => {
     } else {
       setUser({ ...user, category: strCategory })
     }
-    console.log(user.category)
   }
   return (
     <div>

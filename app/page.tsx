@@ -3,6 +3,7 @@ import RecipeCard from "@/components/RecipeCard";
 import { useUserContext } from "@/contexts/userContext";
 import { UserContextType } from "@/types/context";
 import { RecipesType } from "@/types/recipes";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -44,7 +45,10 @@ export default function Home() {
   return (
     <div className="m-auto p-4">
       <h3 className="text-4xl text-center font-semibold">Welcome {user!.name}</h3>
-      <p className="font-semibold text-2xl">Favourie category: <span className="font-bold">{user!.category!.toUpperCase()}</span></p>
+      <div className="font-semibold text-2xl">
+        Favourie category:
+        <Link href={`/categories/${user!.category}`} className="font-semibold">{user!.category?.toUpperCase()}</Link>
+      </div>
       <p>Favourie recipes: {user!.recipes.length}</p>
       <div className="bg-black text-white p-4 rounded-2xl">
         {recipe &&

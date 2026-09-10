@@ -10,7 +10,7 @@ const Category = async ({ params }: { params: Promise<{ id: string }> }) => {
         const data: CategoryMeals = await response.json()
         return (
             <div>
-                <h2 className="text-center text-3xl font-semibold">Category: {id.toUpperCase()}</h2>
+                <h2 className="text-center text-3xl font-semibold">Category: {id}</h2>
                 <LikeCategoryButton strCategory={id} />
                 <div className="grid grid-cols-2 m-auto">
                     {data.meals.map((meal, index) => (
