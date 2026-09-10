@@ -14,7 +14,7 @@ const LoginWrapper = ({ children }: { children: ReactNode }) => {
           <Navigation />
           {children}
 
-        </> : <div className="flex flex-1 items-center justify-center bg-[url('/cozycorner.webp')] bg-cover bg-center"> <Login /></div>}
+        </> : <div className="flex flex-1 items-center justify-center bg-[url('/cozycorner.webp')] bg-cover bg-bottom"> <Login /></div>}
     </>
   )
 }
