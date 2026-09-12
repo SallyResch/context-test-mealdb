@@ -25,7 +25,7 @@ const CategoriesPage = () => {
   }, [])
 
   return (
-    <div className="flex flex-1 flex-col m-auto">
+    <div className="flex flex-1 flex-col w-full max-w-7xl mx-auto p-4">
       <h2 className="font-semibold text-4xl text-center">Meal Categories</h2>
       <div className="grid grid-cols-2 row-auto">
         {categories.map((category) => (
@@ -36,7 +36,7 @@ const CategoriesPage = () => {
               </Link>
               <LikeCategoryButton strCategory={category.strCategory} />
             </div>
-            <img className="text-2xl" src={category.strCategoryThumb} width={200} />
+            <img className="w-full max-w[200px] h-auto mx-auto mt-4 rounded-2xl" src={category.strCategoryThumb} />
           </div>
         ))}
       </div>
