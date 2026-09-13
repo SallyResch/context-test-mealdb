@@ -32,7 +32,7 @@ const Navigation = () => {
                 <XIcon />
               </button>
             </div>
-            <div className="flex flex-col h-[calc(100vh-48px)] font-semibold text-lg p-4">
+            <div className="flex flex-col h-[calc(100vh-48px)] font-semibold text-lg pl-4">
               <Link onClick={handleNavClick} className="text-fuchsia-950 hover:bg-fuchsia-950 hover:text-amber-500 rounded p-2" href={"/"}>Home</Link>
               <Link onClick={handleNavClick} className="text-fuchsia-950 hover:bg-fuchsia-950 hover:text-amber-500 rounded p-2" href={"/about"}>About</Link>
               <Link onClick={handleNavClick} className="text-fuchsia-950 hover:bg-fuchsia-950 hover:text-amber-500 rounded p-2" href={"/categories"}>Categories</Link>
