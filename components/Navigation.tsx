@@ -26,13 +26,13 @@ const Navigation = () => {
         </div>
 
         {isMenuOpen && (
-          <div className="fixed top-28 bottom-0 left-[50%] right-0 z-50 bg-amber-500 shadow-2xl">
+          <div className="fixed top-35 bottom-0 left-[65%] right-0 z-50 bg-amber-500 shadow-2xl">
             <div className="flex justify-end p-2">
               <button onClick={handleMenu}>
                 <XIcon />
               </button>
             </div>
-            <div className="flex flex-col h-[calc(100vh-48px)] font-semibold text-lg">
+            <div className="flex flex-col h-[calc(100vh-48px)] font-semibold text-lg p-4">
               <Link onClick={handleNavClick} className="text-fuchsia-950 hover:bg-fuchsia-950 hover:text-amber-500 rounded p-2" href={"/"}>Home</Link>
               <Link onClick={handleNavClick} className="text-fuchsia-950 hover:bg-fuchsia-950 hover:text-amber-500 rounded p-2" href={"/about"}>About</Link>
               <Link onClick={handleNavClick} className="text-fuchsia-950 hover:bg-fuchsia-950 hover:text-amber-500 rounded p-2" href={"/categories"}>Categories</Link>

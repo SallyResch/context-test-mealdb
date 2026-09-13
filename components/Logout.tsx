@@ -13,7 +13,7 @@ const Logout = () => {
     }
 
     return (
-        <Link href={"/"} onClick={handleLogout} className="flex justify-center items-center text-fuchsia-950 hover:cursor-pointer hover:bg-amber-300 rounded hover:shadow-2xl">
+        <Link href={"/"} onClick={handleLogout} className="flex md:justify-center items-center text-fuchsia-950 hover:cursor-pointer hover:bg-amber-300 rounded hover:shadow-2xl ">
             <p className="mr-2 ml-2">| Logout</p>
             <LogOutIcon />
         </Link>
