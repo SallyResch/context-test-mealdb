@@ -15,6 +15,13 @@ const Navigation = () => {
     setIsMenuOpen(false)
   }
 
+  const navItems = [
+    { name: "Home", href: "/" },
+    { name: "About", href: "/about" },
+    { name: "Categories", href: "/categories" },
+    { name: "Profile", href: "/profile" }
+  ]
+
   return (
     <nav>
       <div className="md:hidden bg-amber-500 text-fuchsia-950">
@@ -33,10 +40,9 @@ const Navigation = () => {
               </button>
             </div>
             <div className="flex flex-col h-[calc(100vh-48px)] font-semibold text-lg pl-4">
-              <Link onClick={handleNavClick} className="text-fuchsia-950 hover:bg-fuchsia-950 hover:text-amber-500 rounded p-2" href={"/"}>Home</Link>
-              <Link onClick={handleNavClick} className="text-fuchsia-950 hover:bg-fuchsia-950 hover:text-amber-500 rounded p-2" href={"/about"}>About</Link>
-              <Link onClick={handleNavClick} className="text-fuchsia-950 hover:bg-fuchsia-950 hover:text-amber-500 rounded p-2" href={"/categories"}>Categories</Link>
-              <Link onClick={handleNavClick} className="text-fuchsia-950 hover:bg-fuchsia-950 hover:text-amber-500 rounded p-2" href={"/profile"}>Profile</Link>
+              {navItems.map((item) => (
+                <Link key={item.href} onClick={handleNavClick} className="text-fuchsia-950 hover:bg-fuchsia-950 hover:text-amber-500 rounded p-2" href={item.href}>{item.name}</Link>
+              ))}
               <Logout />
             </div>
           </div>
@@ -45,10 +51,9 @@ const Navigation = () => {
 
       <div className="bg-amber-500 font-semibold p-2 hidden md:block">
         <div className="flex flex-row justify-center m-auto">
-          <Link className="text-fuchsia-950 hover:bg-fuchsia-950 hover:text-amber-500 rounded p-2" href={"/"}>Home</Link>
-          <Link className="text-fuchsia-950 hover:bg-fuchsia-950 hover:text-amber-500 rounded p-2" href={"/about"}>About</Link>
-          <Link className="text-fuchsia-950 hover:bg-fuchsia-950 hover:text-amber-500 rounded p-2" href={"/categories"}>Categories</Link>
-          <Link className="text-fuchsia-950 hover:bg-fuchsia-950 hover:text-amber-500 rounded p-2" href={"/profile"}>Profile</Link>
+          {navItems.map((item) => (
+            <Link key={item.href} onClick={handleNavClick} className="text-fuchsia-950 hover:bg-fuchsia-950 hover:text-amber-500 rounded p-2" href={item.href}>{item.name}</Link>
+          ))}
           <Logout />
         </div>
       </div>
