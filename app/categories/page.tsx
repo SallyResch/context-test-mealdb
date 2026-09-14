@@ -27,12 +27,12 @@ const CategoriesPage = () => {
   return (
     <div className="flex flex-1 flex-col w-full max-w-7xl mx-auto p-4">
       <h2 className="font-semibold text-4xl text-center">Meal Categories</h2>
-      <div className="grid grid-cols-2 row-auto">
+      <div className="grid grid-cols-2 row-auto m-auto">
         {categories.map((category) => (
           <div key={category.idCategory} className="max-w-md m-2 border-fuchsia-950 border-2 rounded-2xl p-4">
-            <div className="flex justify-between">
+            <div className="">
               <Link href={`/categories/${category.strCategory}`}>
-                <h5 className="text-2xl font-semibold">{category.strCategory}</h5>
+                <h5 className="md:text-2xl text-lg font-semibold">{category.strCategory}</h5>
               </Link>
               <LikeCategoryButton strCategory={category.strCategory} />
             </div>
