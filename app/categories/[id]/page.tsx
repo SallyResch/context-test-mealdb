@@ -9,7 +9,7 @@ const Category = async ({ params }: { params: Promise<{ id: string }> }) => {
         const response = await fetch(`${process.env.NEXT_PUBLIC_API_ENDPOINT}filter.php?c=${id}`)
         const data: CategoryMeals = await response.json()
         return (
-            <div>
+            <div className="m-auto">
                 <div className="flex flex-row justify-center items-center">
                     <h2 className="text-center text-3xl font-semibold mr-5">Category: {id}</h2>
                     <LikeCategoryButton strCategory={id} />
