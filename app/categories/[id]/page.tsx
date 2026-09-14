@@ -10,11 +10,13 @@ const Category = async ({ params }: { params: Promise<{ id: string }> }) => {
         const data: CategoryMeals = await response.json()
         return (
             <div>
-                <h2 className="text-center text-3xl font-semibold">Category: {id}</h2>
-                <LikeCategoryButton strCategory={id} />
-                <div className="grid grid-cols-2 m-auto">
+                <div className="flex flex-row justify-center items-center">
+                    <h2 className="text-center text-3xl font-semibold mr-5">Category: {id}</h2>
+                    <LikeCategoryButton strCategory={id} />
+                </div>
+                <div className="md:grid grid-cols-2 row-auto m-auto">
                     {data.meals.map((meal, index) => (
-                        <div key={index} className="bg-black text-white p-4 rounded-2xl m-auto">
+                        <div key={index} className="text-fuchsia-950 p-4 rounded-2xl m-auto">
                             <RecipeCard idMeal={meal.idMeal} strMeal={meal.strMeal} strMealThumb={meal.strMealThumb} />
                         </div>
                     ))}
