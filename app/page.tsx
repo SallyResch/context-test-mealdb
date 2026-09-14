@@ -43,17 +43,15 @@ export default function Home() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-[url('/cozycorner.webp')] bg-conain bg-bottom text-amber-500">
+    <div className="min-h-screen bg-[url('/cozycorner.webp')] bg-cover bg-bottom text-amber-500 text-center">
       <div className="max-w-7xl mx-auto p-4 sm:p-6 bg-black/50">
-        <div className=" text-center">
-          <h3 className="text-4xl text-center font-semibold max-w-3xl mb-10">Welcome {user!.name}</h3>
-          <div>
-            <div className="text-xl sm:text-2xl font-semibold">
-              <p>Favourie category:{" "}</p>
-              <Link href={`/categories/${user!.category}`} className="font-semibold">{user!.category}</Link>
-            </div>
-            <p>Favourie recipes: {user!.recipes.length}</p>
+        <h3 className="text-4xl font-semibold max-w-3xl mx-auto mb-10">Welcome {user!.name}</h3>
+        <div className="">
+          <div className="text-xl sm:text-2xl font-semibold p-3">
+            <p>Favourie category:{" "}</p>
+            <Link href={`/categories/${user!.category}`} className="font-semibold bg-fuchsia-950 rounded px-2">{user!.category}</Link>
           </div>
+          <p className="text-xl sm:text-2xl font-semibold">Favourie recipes: {user!.recipes.length}</p>
         </div>
         <div className="mt-6 text-amber-500 p-4 sm:p-6 rounded-2xl w-full overflow-hidden">
           {recipe &&
